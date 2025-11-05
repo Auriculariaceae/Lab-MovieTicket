@@ -11,5 +11,8 @@ Evening Show
 ## Author
 Mason Cannon
 
+## Collaboration Acknowledged 
+The project was edited and reviewed by Maria Marshall on GitHub
+
 Edited the code to make it more readable:
 Collaborator: Maria Marshall
