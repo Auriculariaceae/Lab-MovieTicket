@@ -10,3 +10,6 @@ Ticket price: $4
 Evening Show
 ## Author
 Mason Cannon
+
+Edited the code to make it more readable:
+Collaborator: Maria Marshall
