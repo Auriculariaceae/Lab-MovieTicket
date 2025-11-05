@@ -1,35 +1,25 @@
 import java.util.Scanner;
 
 class MovieTicket {
+   //Initializing values
    String movieName;
    int seat;
    String rating;
    double basePrice;
-    // ===== Part A: Properties & Constructor =====
-    // TODO A1: Add properties:
-    //   - movieName (String)
-    //   - seat (int)
-    //   - rating (String)
-    //   - basePrice (double)
+  
 
-    // TODO A2: Add a constructor that sets all properties
+    // Setting up contructor
 MovieTicket(String mN, int s, String r, double bP){
     movieName = mN;
     seat = s;
     rating = r;
     basePrice= bP;
 }
-
-    // ===== Part B: MovieTicket Methods =====
-    // TODO B1: printTicket()
-    // Print exactly: "<movieName> | Seat <seat> | Rating <rating>"
+   //Setting up a method to output information 
 void printTicket(){
     System.out.println(movieName+ "|"+"Seat: "+seat+"| Rating: "+rating);
 }
-    // TODO B2: checkSeat()
-    //   if (seat <= 0) -> print "Invalid seat number!"
-    //   if (seat > 200) -> print "Seat out of range!"
-    //   else -> print "Seat confirmed: <seat>"
+    //Checking whether user input a valid seat number, if not gives error message
 void checkSeat(){
     if (seat <= 0 ) {
         System.out.println("Invalid seat number!");
@@ -39,12 +29,8 @@ void checkSeat(){
     else
         System.out.println("Seat confirmed: "+seat);
 }
-    // TODO B3: computePrice()
-    // Start with: price = basePrice
-    //   if (seat <= 100) -> add $1
-    //   else -> add $3
-    // Then print: "Ticket price: $<price>"
 
+   //Method to calculate price of the based on the seating
 void computePrice(){
     double price = basePrice;
     if (seat<= 100)
@@ -53,9 +39,7 @@ void computePrice(){
         price= basePrice+3;
     System.out.println("Ticket price: $"+price);
 }
-    // TODO B4: checkShowtime(int hour)
-    //   if (hour < 18) -> print "Daytime show."
-    //   else -> print "Evening show."
+    //Checking whether the showtime of the movie is during daytime or the evening 
 void checkShowtime(int hour){
     if (hour<18)
         System.out.println("Daytime show");
@@ -67,6 +51,7 @@ void checkShowtime(int hour){
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+       //Getting value inputs from user
             System.out.println("What movie are you planning on watching?");
             String movieName= sc.nextLine();
 
@@ -79,21 +64,15 @@ public class Main {
             System.out.println("How much does this ticket cost?");
             double basePrice= sc.nextDouble();
 
-
+         //Calling previous methods to calculate values given
             MovieTicket mt1=new MovieTicket(movieName, seat, rating, basePrice);
             mt1.printTicket();
             mt1.checkSeat();
             mt1.computePrice();
-
+            
             System.out.println("When are you seeing the movie? 0-23");
             int hour=sc.nextInt();
             mt1.checkShowtime(hour);
-        // ===== TODOs for Students (no logic code here) =====
-        // 1) Ask the user for: movieName (String), seat (int), rating (String), basePrice (double)
-        // 2) Create a MovieTicket object with those inputs
-        // 3) Call: printTicket()
-        // 4) Call: checkSeat()
-        // 5) Call: computePrice()
-        // 6) Ask for showtime hour (0–23), then call: checkShowtime(hour)
+      
     }
 }
